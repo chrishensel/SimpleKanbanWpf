@@ -1,0 +1,31 @@
+﻿<UserControl x:Class="KanbanWpf.KanbanBoardControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:js="clr-namespace:WPF.JoshSmith.Controls"
+             xmlns:local="clr-namespace:KanbanWpf">
+    <Viewbox>
+        <local:ZoomBorder ClipToBounds="True">
+            <Grid Width="1280" Height="800" Background="White">
+                <Grid x:Name="overlayGrid" x:FieldModifier="private">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Grid.Column="0" Text="To Do" FontWeight="Bold" HorizontalAlignment="Center" FontSize="20" />
+                    <Rectangle Grid.Column="1" Width="2" Fill="LightGray" />
+
+                    <TextBlock Grid.Column="2" Text="In Progress" FontWeight="Bold" HorizontalAlignment="Center" FontSize="20" />
+                    <Rectangle Grid.Column="3" Width="2" Fill="LightGray" />
+
+                    <TextBlock Grid.Column="4" Text="Done" FontWeight="Bold" HorizontalAlignment="Center" FontSize="20" />
+                </Grid>
+
+                <js:DragCanvas x:Name="canvas" MouseDown="canvas_MouseDown" Background="Transparent" />
+            </Grid>
+        </local:ZoomBorder>
+    </Viewbox>
+</UserControl>

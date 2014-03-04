@@ -1,0 +1,25 @@
+﻿<Window x:Class="KanbanWpf.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:KanbanWpf"
+        Title="Kanban" Height="482" Width="779" WindowState="Maximized" Background="Black"
+        Loaded="Window_Loaded">
+    <Grid>
+        <local:KanbanBoardControl x:Name="kanban" />
+        
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Border Grid.Row="1" Grid.Column="0" Background="White" BorderThickness="1" BorderBrush="Black">
+                <TextBlock x:Name="tasksAmount" Margin="2" />
+            </Border>
+        </Grid>
+    </Grid>
+</Window>
